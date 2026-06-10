@@ -13,3 +13,14 @@ VALUES
     ('Platos principales', 'Segundos platos principales'),
     ('Postres', 'Dulces y postres'),
     ('Desayunos', 'Opciones de desayuno');
+
+INSERT INTO PEDIDO (id_cliente, id_empleado, id_mesa, estado, total)
+VALUES
+	(1, 1, 1, 'Pendiente', 45.50),
+	(2, 3, 2, 'En preparación', 78.00),
+	(3, 2, 7, 'Entregado', 120.00),
+	(4, 4, 3, 'Pendiente', 35.00),
+	(5, 4, 4, 'Cancelado', 0.00),
+	(6, 3, 6, 'Entregado', 95.650),
+	(7, 1, 5, 'En preparación', 60.00),
+	(8, 2, 2, 'Pendiente', 42.00);
