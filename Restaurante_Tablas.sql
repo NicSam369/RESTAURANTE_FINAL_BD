@@ -40,3 +40,19 @@
         FOREIGN KEY (id_mesa)
         REFERENCES MESA(id_mesa)
   );
+
+--4
+  CREATE TABLE DETALLE_PEDIDO (
+	id_detalle SERIAL PRIMARY KEY,
+    id_pedido INT NOT NULL,            
+    id_producto INT NOT NULL,          
+    cantidad NUMERIC(8,0) NOT NULL,
+    precio_unitario NUMERIC(12,2) NOT NULL,
+    subtotal NUMERIC(12,2),
+    CONSTRAINT fk_detalle_pedido_pedido
+        FOREIGN KEY (id_pedido)
+        REFERENCES PEDIDO(id_pedido),
+    CONSTRAINT fk_detalle_pedido_producto
+        FOREIGN KEY (id_producto)
+        REFERENCES PRODUCTO(id_producto)
+  );
