@@ -56,3 +56,19 @@
         FOREIGN KEY (id_producto)
         REFERENCES PRODUCTO(id_producto)
   );
+
+--5
+CREATE TABLE PRODUCTO (
+	id_producto SERIAL PRIMARY KEY,
+	nombre VARCHAR(50) NOT NULL,
+	descripcion VARCHAR(50),
+	precio DECIMAL(10,2) NOT NULL,
+	stock INT NOT NULL,
+	id_categoria INT NOT NULL,
+
+	CONSTRAINT fk_id_categoria
+		FOREIGN KEY (id_categoria)
+		REFERENCES CATEGORIA(id_categoria)
+		ON DELETE SET NULL
+  );
+
