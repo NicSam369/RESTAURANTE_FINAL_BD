@@ -79,3 +79,21 @@ CREATE TABLE CATEGORIA (
 	descripcion VARCHAR(50)
   );
 
+--7
+  CREATE TABLE EMPLEADO (
+	id_empleado SERIAL PRIMARY KEY,
+	nombre VARCHAR(50) NOT NULL,
+	apellido VARCHAR(50) NOT NULL,
+	dni VARCHAR(9) UNIQUE,
+	email VARCHAR(50) UNIQUE,
+	telefono VARCHAR(12),
+	rol VARCHAR(50) NOT NULL CHECK (rol IN ('Mesero', 'Cocinero', 'Gerente', 'Cajero')),
+	turno VARCHAR(50) NOT NULL CHECK (turno IN ('Mañana', 'Tarde', 'Noche')),
+	id_scrsal INT NOT NULL,
+
+	CONSTRAINT fk_id_scrsal
+		FOREIGN KEY (id_scrsal)
+		REFERENCES SUCURSAL(id_scrsal)
+	  	ON DELETE SET NULL
+  );
+
