@@ -20,3 +20,23 @@
         FOREIGN KEY (id_scrsal)
         REFERENCES SUCURSAL(id_scrsal)
   );
+
+--3
+  CREATE TABLE PEDIDO (
+	id_pedido SERIAL PRIMARY KEY,
+    id_cliente INT NOT NULL,          
+    id_empleado INT NOT NULL,          
+    id_mesa INT NOT NULL,              
+    fecha_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    estado VARCHAR(30) DEFAULT 'Pendiente',
+    total NUMERIC(10,2),
+    CONSTRAINT fk_pedido_cliente
+        FOREIGN KEY (id_cliente)
+        REFERENCES CLIENTE(id_cliente),
+    CONSTRAINT fk_pedido_empleado
+        FOREIGN KEY (id_empleado)
+        REFERENCES EMPLEADO(id_empleado),
+    CONSTRAINT fk_pedido_mesa
+        FOREIGN KEY (id_mesa)
+        REFERENCES MESA(id_mesa)
+  );
