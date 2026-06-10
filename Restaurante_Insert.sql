@@ -24,3 +24,44 @@ VALUES
 	(6, 3, 6, 'Entregado', 95.650),
 	(7, 1, 5, 'En preparación', 60.00),
 	(8, 2, 2, 'Pendiente', 42.00);
+
+-- Pedido 1 (Cliente Juan - Mesa 1)
+--Pedido 2 (Cliente Maria - Mesa 2)
+-- Pedido 3 (Cliente Ana - Mesa 7)
+-- Pedido 4 (Cliente Carlos - Mesa 3)
+-- Pedido 5 (Cliente Luis - Mesa 4) Cancelado
+-- Pedido 6 (Cliente Juan -  Mesa 6)
+-- Pedido 7 (Cliente Sofia - Mesa 5)
+-- Pedido 8 (Cliente Diego - Mesa 2)
+INSERT INTO DETALLE_PEDIDO (id_pedido, id_producto, cantidad, precio_unitario, subtotal)
+VALUES
+	(1, 3, 1, 25.00, 25.00),
+	(1, 1, 2, 3.50, 7.00),
+	(1, 7, 1, 15.50, 15.00),
+	(1, 2, 1, 5.00, 5.00),
+
+	(2, 5, 2, 35.00, 70.00),
+	(2, 2, 1, 5.00, 5.00),
+	(2, 8, 1, 8.00, 8.00),
+
+	(3, 6, 3, 28.00, 84.00),
+	(3, 10, 2, 15.00, 30.00),
+	(3, 1, 2, 3.50, 7.00),
+
+	(4, 3, 1, 25.00, 25.00),
+	(4, 1, 2, 3.50, 7.00),
+	(4, 11, 1, 4.00, 4.00),
+	
+	(5, 8, 1, 8.00, 8.00),
+
+	(6, 4, 2, 18.00, 36.00),
+	(6, 9, 1, 12.00, 12.00),
+	(6, 1, 3, 3.50, 10.50),
+	(6, 11, 2, 4.00, 8.00),
+
+	(7, 12, 2, 20.00, 40.00),
+	(7, 2, 1, 5.00, 5.00),
+
+	(8, 5, 1, 35.00, 35.00),
+	(8, 3, 1, 25.00, 25.00),
+	(8, 7, 1, 15.00, 15.00);
