@@ -97,3 +97,18 @@ CREATE TABLE CATEGORIA (
 	  	ON DELETE SET NULL
   );
 
+--8
+  CREATE TABLE PROVEEDOR (
+	id_prvdor SERIAL PRIMARY KEY,
+	nombre VARCHAR(50) NOT NULL,
+	ruc VARCHAR(20) NOT NULL,
+	telefono VARCHAR(12),
+	email VARCHAR(50) UNIQUE,
+	id_scrsal INT NOT NULL,
+
+	CONSTRAINT fk_id_scrsal
+		FOREIGN KEY (id_scrsal)
+		REFERENCES SUCURSAL(id_scrsal)
+	  	ON DELETE SET NULL
+  );
+
