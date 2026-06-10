@@ -8,3 +8,15 @@
 	telefono VARCHAR(20),
 	fecha_registro DATE DEFAULT CURRENT_TIMESTAMP
   );
+
+--2
+  CREATE TABLE MESA (
+	id_mesa SERIAL PRIMARY KEY,
+    id_scrsal VARCHAR(20) NOT NULL,
+    numero INTEGER NOT NULL,
+    capacidad INTEGER NOT NULL,
+    estado VARCHAR(20) DEFAULT 'Disponible',
+    CONSTRAINT fk_mesa_sucursal
+        FOREIGN KEY (id_scrsal)
+        REFERENCES SUCURSAL(id_scrsal)
+  );
