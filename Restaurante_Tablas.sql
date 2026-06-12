@@ -148,3 +148,17 @@ CREATE TABLE CATEGORIA (
 		ON DELETE CASCADE
   );
 
+--11
+  CREATE TABLE PAGO (
+	id_pago SERIAL PRIMARY KEY,
+  	monto DECIMAL(10,2) NOT NULL CHECK(monto > 0),
+  	metodo VARCHAR(100) NOT NULL CHECK (metodo IN ('efectivo', 'tarjeta debito', 'tarjeta credito', 'billetera digital', 'transferencia')),
+  	fcha_pago DATE NOT NULL,
+  	estado VARCHAR(100) NOT NULL CHECK(estado IN('pendiente', 'completado', 'cancelado', 'reembolsado')),
+  	id_pedido INT NOT NULL,
+  
+  	CONSTRAINT fk_id_pedido
+		FOREIGN KEY (id_pedido)
+  		REFERENCES PEDIDO(id_pedido)
+		ON DELETE CASCADE
+  );
