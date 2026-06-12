@@ -106,9 +106,10 @@ CREATE TABLE CATEGORIA (
 	email VARCHAR(50) UNIQUE,
 	id_scrsal INT NOT NULL,
 
-	CONSTRAINT fk_prvdor_id_scrsal
+	CONSTRAINT fk_id_scrsal
 		FOREIGN KEY (id_scrsal)
 		REFERENCES SUCURSAL(id_scrsal)
+  );
 
 --9
   CREATE TABLE COMPRA (
