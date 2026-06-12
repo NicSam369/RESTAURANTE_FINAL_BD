@@ -14,6 +14,19 @@ VALUES
     ('Postres', 'Dulces y postres'),
     ('Desayunos', 'Opciones de desayuno');
 
+INSERT INTO EMPLEADO (nombre,apellido,dni,email,telefono,rol,turno,id_scrsal)
+VALUES
+    ('Filippa','Christiansen','67288307','Filippa4445@gmail.com','805789240','Mesero','Mañana','1'),
+    ('Pasi','Oksanen','82811289','Pasi4343@gmail.com','131261220','Cocinero','Mañana','1'),
+    ('Ruth','Johnson','11957695','Ruth56666@gmail.com','853488937','Mesero','Tarde','2'),
+    ('Sven','Hansen','67118203','Sven8787@gmail.com','424870725','Cocinero','Tarde','2'),
+    ('Celia','Parra','11696201','Celia788@gmail.com','151550468','Mesero','Noche','3'),
+    ('Sonia','Calvo','14134919','Sonia424343@gmail.com','373499382','Cocinero','Noche','3'),
+    ('Fiadh','Sheridan','56071613','Fiadh3545@gmail.com','720631884','Mesero','Mañana','4'),
+    ('Virginia','Clark','39315270','Virginia@gmail.com','156109498','Cocinero','Mañana','4'),
+    ('Mohammed','Russell','77194484','Mohammed443@gmail.com','323668631','Mesero','Tarde','5'),
+    ('Hailey','Flynn','34798983','Hailey3332@gmail.com','176476538','Cocinero','Tarde','5');
+
 INSERT INTO PEDIDO (id_cliente, id_empleado, id_mesa, estado, total)
 VALUES
 	(1, 1, 1, 'Pendiente', 45.50),
