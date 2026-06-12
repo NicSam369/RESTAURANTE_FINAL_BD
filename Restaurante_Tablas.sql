@@ -129,4 +129,22 @@ CREATE TABLE CATEGORIA (
 		ON DELETE SET NULL
   );
 
+--10
+  CREATE TABLE DETALLE_COMPRA (
+	id_dtlle_compra SERIAL PRIMARY KEY,
+  	cantidad DECIMAL(10,2) NOT NULL CHECK(cantidad >=0),
+	subtotal DECIMAL(10,2) NOT NULL CHECK(subtotal >= 0),
+	precio_unitario DECIMAL(10,2) NOT NULL CHECK(precio_unitario >= 0),
+	id_producto INT NOT NULL,
+	id_compra INT NOT NULL,
+	  	
+	CONSTRAINT fk_id_producto
+		FOREIGN KEY (id_producto)
+		REFERENCES PRODUCTO(id_producto)
+		ON DELETE CASCADE,
+	CONSTRAINT fk_id_compra
+	  	FOREIGN KEY (id_compra)
+	  	REFERENCES COMPRA(id_compra)
+		ON DELETE CASCADE
+  );
 
