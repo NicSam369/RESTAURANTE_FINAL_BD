@@ -16,35 +16,35 @@ VALUES
 
 INSERT INTO EMPLEADO (nombre,apellido,dni,email,telefono,rol,turno,id_scrsal)
 VALUES
-    ('Filippa','Christiansen','67288307','Filippa4445@gmail.com','805789240','Mesero','Mañana','1'),
-    ('Pasi','Oksanen','82811289','Pasi4343@gmail.com','131261220','Cocinero','Mañana','1'),
-    ('Ruth','Johnson','11957695','Ruth56666@gmail.com','853488937','Mesero','Tarde','2'),
-    ('Sven','Hansen','67118203','Sven8787@gmail.com','424870725','Cocinero','Tarde','2'),
-    ('Celia','Parra','11696201','Celia788@gmail.com','151550468','Mesero','Noche','3'),
-    ('Sonia','Calvo','14134919','Sonia424343@gmail.com','373499382','Cocinero','Noche','3'),
-    ('Fiadh','Sheridan','56071613','Fiadh3545@gmail.com','720631884','Mesero','Mañana','4'),
-    ('Virginia','Clark','39315270','Virginia@gmail.com','156109498','Cocinero','Mañana','4'),
-    ('Mohammed','Russell','77194484','Mohammed443@gmail.com','323668631','Mesero','Tarde','5'),
-    ('Hailey','Flynn','34798983','Hailey3332@gmail.com','176476538','Cocinero','Tarde','5');
+    ('Filippa','Christiansen','67288307','Filippa4445@gmail.com','805789240','Mesero','Mañana',1),
+    ('Pasi','Oksanen','82811289','Pasi4343@gmail.com','131261220','Cocinero','Mañana',1),
+    ('Ruth','Johnson','11957695','Ruth56666@gmail.com','853488937','Mesero','Tarde',2),
+    ('Sven','Hansen','67118203','Sven8787@gmail.com','424870725','Cocinero','Tarde',2),
+    ('Celia','Parra','11696201','Celia788@gmail.com','151550468','Mesero','Noche',3),
+    ('Sonia','Calvo','14134919','Sonia424343@gmail.com','373499382','Cocinero','Noche',3),
+    ('Fiadh','Sheridan','56071613','Fiadh3545@gmail.com','720631884','Mesero','Mañana',4),
+    ('Virginia','Clark','39315270','Virginia@gmail.com','156109498','Cocinero','Mañana',4),
+    ('Mohammed','Russell','77194484','Mohammed443@gmail.com','323668631','Mesero','Tarde',5),
+    ('Hailey','Flynn','34798983','Hailey3332@gmail.com','176476538','Cocinero','Tarde',5);
 
 INSERT INTO MESA (numero,capacidad,estado,id_scrsal)
 VALUES
-    ('1','6','Disponible','1'),
-    ('1','4','Ocupado','2'),
-    ('1','2','Disponible','3'),
-    ('1','3','Disponible','4'),
-    ('1','6','Ocupado','5'),
-    ('2','2','Disponible','1'),
-    ('2','2','Disponible','2'),
-    ('2','5','Ocupado','3');
+    (1,6,'Disponible',1),
+    (1,4,'Ocupado',2),
+    (1,2,'Disponible',3),
+    (1,3,'Disponible',4),
+    (1,6,'Ocupado',5),
+    (2,2,'Disponible',1),
+    (2,2,'Disponible',2),
+    (2,5,'Ocupado',3);
 
 INSERT INTO PROVEEDOR (nombre,ruc,telefono,email,id_scrsal)
 VALUES
-    ('Brynja','20551234561','873778406','Brya312@gmail.com','1'),
-    ('Rhonda','20449876542','780616461','Rhon3342@gmail.com','2'),
-    ('Britt','20112233443','136493537','Btt345@gmail.com','3'),
-    ('Luigi','10456789012','587892506','Lgi938@gmail.com','4'),
-    ('Sherwood','10765432109','185579779','Shwwod465@gmail.com','5');
+    ('Brynja','20551234561','873778406','Brya312@gmail.com',1),
+    ('Rhonda','20449876542','780616461','Rhon3342@gmail.com',2),
+    ('Britt','20112233443','136493537','Btt345@gmail.com',3),
+    ('Luigi','10456789012','587892506','Lgi938@gmail.com',4),
+    ('Sherwood','10765432109','185579779','Shwwod465@gmail.com',5);
 
 INSERT INTO PEDIDO (id_cliente, id_empleado, id_mesa, estado, total)
 VALUES
