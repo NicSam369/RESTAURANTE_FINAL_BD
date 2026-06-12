@@ -162,3 +162,16 @@ CREATE TABLE CATEGORIA (
   		REFERENCES PEDIDO(id_pedido)
 		ON DELETE CASCADE
   );
+
+--12
+  CREATE TABLE FACTURA (
+	id_factura SERIAL PRIMARY KEY,
+  	numero VARCHAR(50) NOT NULL UNIQUE,
+  	fecha_emision DATE NOT NULL,
+  	monto_total DECIMAL(10,2) NOT NULL CHECK(monto_total >= 0),
+  	id_pago INT NOT NULL,
+  
+  	CONSTRAINT fk_id_pago
+		FOREIGN KEY (id_pago)
+  		REFERENCES PAGO(id_pago)
+  );
