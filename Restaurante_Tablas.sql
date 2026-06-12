@@ -91,7 +91,7 @@ CREATE TABLE CATEGORIA (
 	turno VARCHAR(50) NOT NULL CHECK (turno IN ('Mañana', 'Tarde', 'Noche')),
 	id_scrsal INT NOT NULL,
 
-	CONSTRAINT fk_id_scrsal
+	CONSTRAINT fk_empldo_id_scrsal
 		FOREIGN KEY (id_scrsal)
 		REFERENCES SUCURSAL(id_scrsal)
 	  	ON DELETE SET NULL
@@ -106,7 +106,7 @@ CREATE TABLE CATEGORIA (
 	email VARCHAR(50) UNIQUE,
 	id_scrsal INT NOT NULL,
 
-	CONSTRAINT fk_id_scrsal
+	CONSTRAINT fk_prvdor_id_scrsal
 		FOREIGN KEY (id_scrsal)
 		REFERENCES SUCURSAL(id_scrsal)
 
