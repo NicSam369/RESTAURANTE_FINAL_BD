@@ -13,6 +13,29 @@ VALUES
     ('Platos principales', 'Segundos platos principales'),
     ('Postres', 'Dulces y postres'),
     ('Desayunos', 'Opciones de desayuno');
+INSERT INTO PRODUCTO (nombre, descripcion, precio, stock, id_categoria) VALUES
+	('Coca Cola 500ml', 'Gaseosa de cola', 3.50, 100, 1),
+	('Limonada Natural', 'Limonada con hierbabuena', 5.00, 50, 1),
+	('Ceviche Clasico', 'Ceviche de pescado fresco', 25.00, 30, 2),
+	('Papa a la Huancaina', 'Papas con salsa de aji', 18.00, 40, 2),
+	('Lomo Saltado', 'Carne salteada con papas fritas', 35.00, 25, 3),
+	('Aji de Gallina', 'Pollo desmechado con salsa', 28.00, 20, 3),
+	('Torta de Chocolate', 'Torta con crema de chocolate', 15.00, 15, 4),
+	('Helado de Vainilla', 'Helado artesanal de vainilla', 8.00, 30, 4),
+	('Pan con Tamal', 'Desayuno tradicional peruano', 12.00, 20, 5),
+	('Caldo de Gallina', 'Sopa de gallina con fideos', 15.00, 25, 5),
+	('Te Frio', 'Te frio con limon', 4.00, 60, 1),
+	('Causa Rellena', 'Causa de pollo con palta', 20.00, 35, 2);
+
+INSERT INTO CLIENTE (nombre, apellido, email, dni, telefono) VALUES
+	('Juan', 'Perez', 'juan.perez@email.com', '12345678', '999-111-111'),
+	('Maria', 'Garcia', 'maria.garcia@email.com', '87654321', '999-222-222'),
+	('Carlos', 'Lopez', 'carlos.lopez@email.com', '45678912', '999-333-333'),
+	('Ana', 'Martinez', 'ana.martinez@email.com', '78912345', '999-444-444'),
+	('Luis', 'Rodriguez', 'luis.rodriguez@email.com', '32165498', '999-555-555'),
+	('Sofia', 'Torres', 'sofia.torres@email.com', '65498732', '999-666-666'),
+	('Diego', 'Fernandez', 'diego.fernandez@email.com', '14725836', '999-777-777'),
+	('Elena', 'Castro', 'elena.castro@email.com', '36985214', '999-888-888');
 
 INSERT INTO EMPLEADO (nombre,apellido,dni,email,telefono,rol,turno,id_scrsal)
 VALUES
