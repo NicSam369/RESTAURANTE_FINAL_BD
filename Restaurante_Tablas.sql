@@ -109,6 +109,24 @@ CREATE TABLE CATEGORIA (
 	CONSTRAINT fk_id_scrsal
 		FOREIGN KEY (id_scrsal)
 		REFERENCES SUCURSAL(id_scrsal)
-	  	ON DELETE SET NULL
+
+--9
+  CREATE TABLE COMPRA (
+	id_compra SERIAL PRIMARY KEY,
+  	fecha DATE NOT NULL,
+  	total DECIMAL(10,2) NOT NULL CHECK(total >= 0),
+  	estado VARCHAR(100) NOT NULL CHECK(estado IN('pendiente', 'recibido', 'cancelado', 'parcialmente recibido', 'devuelto')),
+  	id_scrsal INT NOT NULL,
+  	id_prvdor INT,
+  
+  	CONSTRAINT fk_id_scrsal
+		FOREIGN KEY (id_scrsal)
+  		REFERENCES SUCURSAL(id_scrsal)
+		ON DELETE CASCADE,
+  	CONSTRAINT fk_id_prvdor
+		FOREIGN KEY (id_prvdor)
+  		REFERENCES PROVEEDOR(id_prvdor)
+		ON DELETE SET NULL
   );
+
 
