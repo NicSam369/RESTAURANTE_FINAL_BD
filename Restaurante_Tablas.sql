@@ -175,3 +175,46 @@ CREATE TABLE CATEGORIA (
 		FOREIGN KEY (id_pago)
   		REFERENCES PAGO(id_pago)
   );
+CREATE TABLE RESERVA (
+    id_reserva SERIAL PRIMARY KEY,
+    fecha_reserva DATE NOT NULL,
+    hora TIME NOT NULL,
+    num_personas INTEGER NOT NULL,
+    estado VARCHAR(30) DEFAULT 'Pendiente',
+    id_cliente INT NOT NULL,
+    id_mesa INT NOT NULL,
+    id_scrsal INT NOT NULL,
+
+    CONSTRAINT fk_reserva_cliente
+        FOREIGN KEY (id_cliente)
+        REFERENCES CLIENTE(id_cliente),
+    CONSTRAINT fk_reserva_mesa
+        FOREIGN KEY (id_mesa)
+        REFERENCES MESA(id_mesa),
+    CONSTRAINT fk_reserva_sucursal
+        FOREIGN KEY (id_scrsal)
+        REFERENCES SUCURSAL(id_scrsal)
+);
+
+--14
+CREATE TABLE PROMOCION (
+    id_promocion SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    descuento_pct DECIMAL(5,2) NOT NULL,
+    fecha_inicio DATE NOT NULL,
+    fecha_fin DATE NOT NULL,
+    id_scrsal INT,
+
+    CONSTRAINT fk_promocion_sucursal
+        FOREIGN KEY (id_scrsal)
+        REFERENCES SUCURSAL(id_scrsal)
+);
+
+--15
+CREATE TABLE SUCURSAL (
+    id_scrsal SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    direccion VARCHAR(150) NOT NULL,
+    ciudad VARCHAR(50) NOT NULL,
+    telefono VARCHAR(20)
+);
