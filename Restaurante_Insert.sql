@@ -38,6 +38,14 @@ VALUES
     ('2','2','Disponible','2'),
     ('2','5','Ocupado','3');
 
+INSERT INTO PROVEEDOR (nombre,ruc,telefono,email,id_scrsal)
+VALUES
+    ('Brynja','20551234561','873778406','Brya312@gmail.com','1'),
+    ('Rhonda','20449876542','780616461','Rhon3342@gmail.com','2'),
+    ('Britt','20112233443','136493537','Btt345@gmail.com','3'),
+    ('Luigi','10456789012','587892506','Lgi938@gmail.com','4'),
+    ('Sherwood','10765432109','185579779','Shwwod465@gmail.com','5');
+
 INSERT INTO PEDIDO (id_cliente, id_empleado, id_mesa, estado, total)
 VALUES
 	(1, 1, 1, 'Pendiente', 45.50),
