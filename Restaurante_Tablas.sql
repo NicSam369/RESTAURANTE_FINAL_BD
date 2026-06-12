@@ -12,7 +12,7 @@
 --2
   CREATE TABLE MESA (
 	id_mesa SERIAL PRIMARY KEY,
-    id_scrsal VARCHAR(20) NOT NULL,
+    id_scrsal INT NOT NULL,
     numero INTEGER NOT NULL,
     capacidad INTEGER NOT NULL,
     estado VARCHAR(20) DEFAULT 'Disponible',
