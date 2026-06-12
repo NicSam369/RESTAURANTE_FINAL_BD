@@ -27,6 +27,17 @@ VALUES
     ('Mohammed','Russell','77194484','Mohammed443@gmail.com','323668631','Mesero','Tarde','5'),
     ('Hailey','Flynn','34798983','Hailey3332@gmail.com','176476538','Cocinero','Tarde','5');
 
+INSERT INTO MESA (numero,capacidad,estado,id_scrsal)
+VALUES
+    ('1','6','Disponible','1'),
+    ('1','4','Ocupado','2'),
+    ('1','2','Disponible','3'),
+    ('1','3','Disponible','4'),
+    ('1','6','Ocupado','5'),
+    ('2','2','Disponible','1'),
+    ('2','2','Disponible','2'),
+    ('2','5','Ocupado','3');
+
 INSERT INTO PEDIDO (id_cliente, id_empleado, id_mesa, estado, total)
 VALUES
 	(1, 1, 1, 'Pendiente', 45.50),
