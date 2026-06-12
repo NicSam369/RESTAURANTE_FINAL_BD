@@ -1,4 +1,4 @@
-INSERT INTO SUCURSAL(nombre,dirección,telefono,ciudad)
+INSERT INTO SUCURSAL(nombre,direccion,telefono,ciudad)
 VALUES
     ('Sucursal Centro', 'Av. Principal 123', '555-0101', 'Lima'),
     ('Sucursal Norte', 'Calle Norte 456', '555-0102', 'Lima'),
