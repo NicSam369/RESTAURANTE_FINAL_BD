@@ -18,3 +18,6 @@ Sistema de Base de datos de restaurante
 10. Detalle_compra
 11. Pago
 12. Factura
+13. Reserva
+14. Promocion
+15. Sucursal
