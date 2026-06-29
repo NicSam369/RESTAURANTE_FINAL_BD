@@ -17,18 +17,6 @@ CREATE TABLE SUCURSAL (
 	fecha_registro DATE DEFAULT CURRENT_TIMESTAMP
   );
 
---2
-  CREATE TABLE MESA (
-	id_mesa SERIAL PRIMARY KEY,
-    id_scrsal INT NOT NULL,
-    numero INTEGER NOT NULL,
-    capacidad INTEGER NOT NULL,
-    estado VARCHAR(20) DEFAULT 'Disponible',
-    CONSTRAINT fk_mesa_sucursal
-        FOREIGN KEY (id_scrsal)
-        REFERENCES SUCURSAL(id_scrsal)
-  );
-
 --3
   CREATE TABLE PEDIDO (
 	id_pedido SERIAL PRIMARY KEY,
@@ -90,7 +78,17 @@ CREATE TABLE CATEGORIA (
 		REFERENCES SUCURSAL(id_scrsal)
 	  	ON DELETE SET NULL
   );
-
+--2
+  CREATE TABLE MESA (
+	id_mesa SERIAL PRIMARY KEY,
+    id_scrsal INT NOT NULL,
+    numero INTEGER NOT NULL,
+    capacidad INTEGER NOT NULL,
+    estado VARCHAR(20) DEFAULT 'Disponible',
+    CONSTRAINT fk_mesa_sucursal
+        FOREIGN KEY (id_scrsal)
+        REFERENCES SUCURSAL(id_scrsal)
+  );
 --8
   CREATE TABLE PROVEEDOR (
 	id_prvdor SERIAL PRIMARY KEY,
