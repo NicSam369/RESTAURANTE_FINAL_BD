@@ -1,3 +1,11 @@
+--15
+CREATE TABLE SUCURSAL (
+    id_scrsal SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    direccion VARCHAR(150) NOT NULL,
+    ciudad VARCHAR(50) NOT NULL,
+    telefono VARCHAR(20)
+);
 --1
   CREATE TABLE CLIENTE (
 	id_cliente SERIAL PRIMARY KEY,
@@ -211,11 +219,4 @@ CREATE TABLE PROMOCION (
         REFERENCES SUCURSAL(id_scrsal)
 );
 
---15
-CREATE TABLE SUCURSAL (
-    id_scrsal SERIAL PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    direccion VARCHAR(150) NOT NULL,
-    ciudad VARCHAR(50) NOT NULL,
-    telefono VARCHAR(20)
-);
+
