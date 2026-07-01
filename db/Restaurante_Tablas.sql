@@ -6,6 +6,13 @@ CREATE TABLE SUCURSAL (
     ciudad VARCHAR(50) NOT NULL,
     telefono VARCHAR(20)
 );
+
+CREATE TABLE CATEGORIA (
+	id_categoria SERIAL PRIMARY KEY,
+	nombre VARCHAR(50) NOT NULL,
+	descripcion VARCHAR(50)
+  );
+
 --1
   CREATE TABLE CLIENTE (
 	id_cliente SERIAL PRIMARY KEY,
@@ -15,28 +22,6 @@ CREATE TABLE SUCURSAL (
 	dni VARCHAR(20) UNIQUE NOT NULL,
 	telefono VARCHAR(20),
 	fecha_registro DATE DEFAULT CURRENT_TIMESTAMP
-  );
-
---5
-CREATE TABLE PRODUCTO (
-	id_producto SERIAL PRIMARY KEY,
-	nombre VARCHAR(50) NOT NULL,
-	descripcion VARCHAR(50),
-	precio DECIMAL(10,2) NOT NULL,
-	stock INT NOT NULL,
-	id_categoria INT NOT NULL,
-
-	CONSTRAINT fk_id_categoria
-		FOREIGN KEY (id_categoria)
-		REFERENCES CATEGORIA(id_categoria)
-		ON DELETE SET NULL
-  );
-
---6
-CREATE TABLE CATEGORIA (
-	id_categoria SERIAL PRIMARY KEY,
-	nombre VARCHAR(50) NOT NULL,
-	descripcion VARCHAR(50)
   );
 
 --7
@@ -71,6 +56,20 @@ CREATE TABLE CATEGORIA (
     CONSTRAINT chk_estado_mesa
         CHECK (estado IN ('disponible', 'ocupado'))
 );
+
+CREATE TABLE PRODUCTO (
+	id_producto SERIAL PRIMARY KEY,
+	nombre VARCHAR(50) NOT NULL,
+	descripcion VARCHAR(50),
+	precio DECIMAL(10,2) NOT NULL,
+	stock INT NOT NULL,
+	id_categoria INT NOT NULL,
+
+	CONSTRAINT fk_id_categoria
+		FOREIGN KEY (id_categoria)
+		REFERENCES CATEGORIA(id_categoria)
+		ON DELETE SET NULL
+  );
 
 --8
   CREATE TABLE PROVEEDOR (
