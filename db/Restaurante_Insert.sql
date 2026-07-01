@@ -52,14 +52,14 @@ VALUES
 
 INSERT INTO MESA (numero,capacidad,estado,id_scrsal)
 VALUES
-    (1,6,'Disponible',1),
-    (1,4,'Ocupado',2),
-    (1,2,'Disponible',3),
-    (1,3,'Disponible',4),
-    (1,6,'Ocupado',5),
-    (2,2,'Disponible',1),
-    (2,2,'Disponible',2),
-    (2,5,'Ocupado',3);
+    (1,6,'disponible',1),
+    (1,4,'ocupado',2),
+    (1,2,'disponible',3),
+    (1,3,'disponible',4),
+    (1,6,'ocupado',5),
+    (2,2,'disponible',1),
+    (2,2,'disponible',2),
+    (2,5,'ocupado',3);
 
 INSERT INTO PROVEEDOR (nombre,ruc,telefono,email,id_scrsal)
 VALUES
@@ -71,14 +71,14 @@ VALUES
 
 INSERT INTO PEDIDO (id_cliente, id_empleado, id_mesa, estado, total)
 VALUES
-	(1, 1, 1, 'Pendiente', 45.50),
-	(2, 3, 2, 'En preparación', 78.00),
-	(3, 2, 7, 'Entregado', 120.00),
-	(4, 4, 3, 'Pendiente', 35.00),
-	(5, 4, 4, 'Cancelado', 0.00),
-	(6, 3, 6, 'Entregado', 95.650),
-	(7, 1, 5, 'En preparación', 60.00),
-	(8, 2, 2, 'Pendiente', 42.00);
+	(1, 1, 1, 'pendiente', 45.50),
+	(2, 3, 2, 'en_proceso', 78.00),
+	(3, 2, 7, 'entregado', 120.00),
+	(4, 4, 3, 'pendiente', 35.00),
+	(5, 4, 4, 'cancelado', 0.00),
+	(6, 3, 6, 'entregado', 95.650),
+	(7, 1, 5, 'en_proceso', 60.00),
+	(8, 2, 2, 'pendiente', 42.00);
 
 -- Pedido 1 (Cliente Juan - Mesa 1)
 --Pedido 2 (Cliente Maria - Mesa 2)
