@@ -4,14 +4,18 @@
 BEGIN;
 
 INSERT INTO PEDIDO (id_cliente, id_empleado, id_mesa, estado, total)
-VALUES (1, 2, 3, 'Pendiente', 50.00);
+VALUES (1, 2, 3, 'Pendiente',0);
 
 INSERT INTO DETALLE_PEDIDO (id_pedido, id_producto, cantidad, precio_unitario, subtotal)
-VALUES (1, 10, 2, 25.00, 50.00);
+VALUES (currval('pedido_id_pedido_seq'), 10, 2, 15.00, 30.00);
 
 UPDATE PRODUCTO SET stock = stock - 2 WHERE id_producto = 10;
+UPDATE MESA     SET estado = 'Ocupada' WHERE id_mesa = 3;
 
-UPDATE MESA SET estado = 'Ocupada' WHERE id_mesa = 3;
+UPDATE PEDIDO
+SET total = (SELECT COALESCE(SUM(subtotal), 0) FROM DETALLE_PEDIDO
+             WHERE id_pedido = currval('pedido_id_pedido_seq'))
+WHERE id_pedido = currval('pedido_id_pedido_seq');
 
 COMMIT;
 
@@ -21,10 +25,10 @@ COMMIT;
 BEGIN;
 
 INSERT INTO PAGO (monto, metodo, fcha_pago, estado, id_pedido)
-VALUES (15000, 'tarjeta debito', CURRENT_DATE, 'completado', 5);
+VALUES (150.00, 'tarjeta debito', CURRENT_DATE, 'completado', 5);
 
 INSERT INTO FACTURA (numero, fecha_emision, monto_total, id_pago)
-VALUES ('FAC-001', CURRENT_DATE, 15000, 1);
+VALUES ('FAC-T01', CURRENT_DATE, 150.00, currval('pago_id_pago_seq'));
 
 UPDATE PEDIDO SET estado = 'Pagado' WHERE id_pedido = 5;
 
