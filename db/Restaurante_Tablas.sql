@@ -106,9 +106,9 @@ CREATE TABLE CATEGORIA (
 	id_detalle SERIAL PRIMARY KEY,
     id_pedido INT NOT NULL,            
     id_producto INT NOT NULL,          
-    cantidad NUMERIC(8,0) NOT NULL,
-    precio_unitario NUMERIC(12,2) NOT NULL,
-    subtotal NUMERIC(12,2),
+    cantidad DECIMAL(8,0) NOT NULL,
+    precio_unitario DECIMAL(12,2) NOT NULL,
+    subtotal DECIMAL(12,2),
     CONSTRAINT fk_detalle_pedido_pedido
         FOREIGN KEY (id_pedido)
         REFERENCES PEDIDO(id_pedido),
