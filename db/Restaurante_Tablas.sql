@@ -58,15 +58,20 @@ CREATE TABLE CATEGORIA (
   );
 --2
   CREATE TABLE MESA (
-	id_mesa SERIAL PRIMARY KEY,
+    id_mesa SERIAL PRIMARY KEY,
     id_scrsal INT NOT NULL,
     numero INTEGER NOT NULL,
     capacidad INTEGER NOT NULL,
-    estado VARCHAR(20) DEFAULT 'Disponible',
+    estado VARCHAR(20) DEFAULT 'disponible',
+    
     CONSTRAINT fk_mesa_sucursal
         FOREIGN KEY (id_scrsal)
-        REFERENCES SUCURSAL(id_scrsal)
-  );
+        REFERENCES SUCURSAL(id_scrsal),
+
+    CONSTRAINT chk_estado_mesa
+        CHECK (estado IN ('disponible', 'ocupado'))
+);
+
 --8
   CREATE TABLE PROVEEDOR (
 	id_prvdor SERIAL PRIMARY KEY,
