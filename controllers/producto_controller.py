@@ -3,7 +3,6 @@ from flask import request, jsonify
 from services import producto_services as svc
 from utils.error_utils import explicar_error
 
-
 def listar_productos():
     sql, data = svc.listar_productos()
     try:
