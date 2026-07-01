@@ -88,7 +88,7 @@ CREATE TABLE CATEGORIA (
     id_mesa INT NOT NULL,              
     fecha_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     estado VARCHAR(30) DEFAULT 'Pendiente',
-    total NUMERIC(10,2),
+    total DECIMAL(10,2),
     CONSTRAINT fk_pedido_cliente
         FOREIGN KEY (id_cliente)
         REFERENCES CLIENTE(id_cliente),
